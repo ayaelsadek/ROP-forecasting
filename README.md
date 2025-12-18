@@ -9,14 +9,23 @@ The goal is to build an accurate and interpretable model that captures the nonli
 📂 Project Structure
 كتابة تعليمات برمجية
 ├── models/
+
 │   ├── final_rop_model.pkl
+
 │   ├── best_rf.joblib
+
 │   ├── scaler+poly.pkl
+
 │   ├── features.pkl
+
 │   └── comparison_table_after_fixes.csv
+
 ├── notebook.ipynb
+
 ├── README.md
+
 └── data/ (not included)
+
 🛠️ Technologies Used
 Python (Pandas, NumPy)
 
