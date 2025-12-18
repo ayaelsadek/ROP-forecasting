@@ -159,9 +159,10 @@ model = joblib.load("models/final_rop_model.pkl")
 Prepare input features and predict:
 
 python
-y_pred = model.predict(X_processed)
+y_pred = model.predict(x_processed)
 
 📌 Conclusion
+
 This case study demonstrates a full ML pipeline for drilling ROP prediction, including:
 
 Advanced feature engineering
