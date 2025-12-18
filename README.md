@@ -1,4 +1,3 @@
-# ROP-forecasting
 📘 Rate of Penetration (ROP) Prediction — Machine Learning Case Study
 Author: Aya Elsadek
 
@@ -8,32 +7,27 @@ This project presents a complete machine learning workflow for predicting the Ra
 The goal is to build an accurate and interpretable model that captures the nonlinear behavior of drilling parameters and their interactions.
 
 📂 Project Structure
-
+كتابة تعليمات برمجية
 ├── models/
-
 │   ├── final_rop_model.pkl
-
 │   ├── best_rf.joblib
-
 │   ├── scaler+poly.pkl
-
 │   ├── features.pkl
-
 │   └── comparison_table_after_fixes.csv
-
 ├── notebook.ipynb
-
 ├── README.md
-
 └── data/ (not included)
-
 🛠️ Technologies Used
-
 Python (Pandas, NumPy)
+
 Scikit‑learn
+
 XGBoost
+
 SHAP
+
 Matplotlib / Seaborn
+
 Joblib
 
 📊 Dataset
@@ -48,7 +42,6 @@ VSH	Shale volume
 SW	Water saturation
 KLOGH	Permeability log
 ROP_AVG	Target variable
-
 🔧 Data Preprocessing
 The notebook performs several preprocessing steps:
 
@@ -59,26 +52,39 @@ IQR-based winsorization applied to all numeric features.
 Includes both physical and statistical features:
 
 SE (Specific Energy)
+
 MSE (Mechanical Specific Energy)
+
 EFF (Drilling Efficiency)
+
 HHP_est (Hydraulic Horsepower estimate)
+
 Log transform of permeability
+
 Interaction terms (e.g., WOB × RPM)
+
 Rate-of-change features (first differences)
+
 Rolling window features (MA3)
 
 ✅ Scaling
 StandardScaler
+
 RobustScaler
+
 PolynomialFeatures (degree = 2)
 
 🤖 Models Trained
 Several baseline models were trained:
 
 Linear Regression
+
 Ridge Regression
+
 Lasso Regression
+
 Random Forest
+
 XGBoost
 
 Both baseline and tuned versions were evaluated.
@@ -88,6 +94,7 @@ The best-performing model was:
 
 ✅ XGBoost (baseline)
 RMSE: 0.000871
+
 R²: 0.5825
 
 A comparison table is saved in: models/comparison_table_after_fixes.csv
@@ -97,7 +104,9 @@ SHAP was used to interpret the XGBoost model:
 
 ✅ Global Insights
 EFF and EFF² strongly increase ROP
+
 WOB and WOB×RPM interactions reduce ROP
+
 Only a small subset of polynomial features significantly influence predictions
 
 ✅ Local Explanation
@@ -135,19 +144,21 @@ Load the model:
 python
 import joblib
 model = joblib.load("models/final_rop_model.pkl")
-
 Prepare input features and predict:
 
 python
 y_pred = model.predict(X_processed)
-
 📌 Conclusion
 This case study demonstrates a full ML pipeline for drilling ROP prediction, including:
 
 Advanced feature engineering
+
 Polynomial expansion
+
 Model tuning
+
 Explainability with SHAP
+
 Diagnostic evaluation
 
 The workflow is reproducible, interpretable, and ready for deployment.
