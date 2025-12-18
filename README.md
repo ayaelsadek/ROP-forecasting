@@ -51,6 +51,7 @@ VSH	Shale volume
 SW	Water saturation
 KLOGH	Permeability log
 ROP_AVG	Target variable
+
 🔧 Data Preprocessing
 The notebook performs several preprocessing steps:
 
@@ -58,6 +59,7 @@ The notebook performs several preprocessing steps:
 IQR-based winsorization applied to all numeric features.
 
 ✅ Feature Engineering
+
 Includes both physical and statistical features:
 
 SE (Specific Energy)
@@ -84,6 +86,7 @@ RobustScaler
 PolynomialFeatures (degree = 2)
 
 🤖 Models Trained
+
 Several baseline models were trained:
 
 Linear Regression
@@ -157,6 +160,7 @@ Prepare input features and predict:
 
 python
 y_pred = model.predict(X_processed)
+
 📌 Conclusion
 This case study demonstrates a full ML pipeline for drilling ROP prediction, including:
 
